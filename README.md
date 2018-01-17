@@ -9,6 +9,8 @@
 
 1\. **version 1.0.1** from R (Open R software and run:)
 
+	### version 1.0.1
+	
 	install.packages("basicTrendline")
 	library(basicTrendline)
 
@@ -16,7 +18,9 @@
 
 You can install directly **from GitHub** if you have the devtools package installed:
 
-    install.packages("devtools")
+    ### version 1.0.2
+	
+	install.packages("devtools")
 	library(devtools)   
 	install_github("PhDMeiwp/basicTrendline@master", force = TRUE)
 	library(basicTrendline)
