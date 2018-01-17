@@ -87,6 +87,44 @@ version 1.0.1 of "basicTrendline" package, figure for exp3P:
 
 <img src="docs/images/Multilines.png" width="490"/>
 
+
+**[case 5]** Finally, we can also draw **Same regression lines with different dataset!!!**
+
+import some dataset:
+
+	x1<- c(1,30,90,180,360)
+	x2<- c(1,45,90,180,360)
+	x3<- c(1,30,60,120,240)
+
+	y1<-c(10,14,18,19,20)    
+	y2<- c(8,11,13,15,17) 
+	y3<-c(9,13,16,16,16)   
+
+Plot and add regression lines:
+
+	plot(x1,y1,,pch=1, xlim = c(0,400),ylim = c(6,22),main="Same regression lines with different datasets",xlab = "Time (days)", ylab = "your ylab (‰)")
+
+	points(x2,y2,pch=2)  # different type for points
+	points(x3,y3,pch=3)
+
+	library(basicTrendline)
+
+	# different linecolor and lty (lineType) for each trendline
+	trendline(x1,y1,model="exp3P",linecolor="red",lty=1,plot=FALSE,ePos="none",summary = TRUE)->output1
+	trendline(x2,y2,model="exp3P",linecolor="blue",lty = 2,plot=FALSE,ePos="none",summary = TRUE)->output2
+	trendline(x3,y3,model="exp3P",linecolor="green",lty = 3,plot=FALSE,ePos="none",summary = TRUE)->output3
+	
+	# add legend
+	legend("bottomright",c("x1y1","x2y2","x3y3"),pch=c(1,2,3), lty=c(1,2,3),col=c("red","blue","green"))
+
+	## return the results of each trendline as follow:
+	output1
+	output2
+	output3
+
+<img src="docs/images/case5.png" width="490"/>
+
+
 ## Highlights
 
 <font color=red>The "basicTrendline" package in R software could output **a better regression result (higher R<sup>2</sup> and lower p-value)** for 'power3P' model（y = ax^b +c） **than those in OriginPro** software.</font> Please see the example below:
