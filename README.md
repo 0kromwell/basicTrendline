@@ -48,7 +48,7 @@ version 1.0.1 of "basicTrendline" package, figure for exp3P:
 
  <img src="docs/images/exp.png" width="490"/>
 
-**[case 2:] plot and add trendline separately: ** 
+**[case 2:] plot and add trendline separately:** 
 
 
 	plot(x,y,yaxt="n",xlab = "your own xaxis name (mg)", ylab = "ylab (‰)")
@@ -74,15 +74,25 @@ version 1.0.1 of "basicTrendline" package, figure for exp3P:
 
 - "power3P"   # y=a*x^b+c)
 
+	library(basicTrendline)
+	# change to use model "log2P"
+	trendline(x,y, model="log2P", summary=TRUE, eDigit=3, ePos="bottom",linecolor="black") 
+
+<img src="docs/images/log2P.png" width="490"/>
+
 **[case 4:] draw different regression lines for the same dataset:**
 
+	x1<-1:5
+	y1<-c(2,14,18,19,20)
 
 	plot(x1,y1,main="Different regression lines in one plot")
 	
 	library(basicTrendline)
+
 	trendline(x1,y1,model="line2P",plot=FALSE,ePos="none",linecolor="red")
 	trendline(x1,y1,model="log2P",plot=FALSE,ePos="none",linecolor="blue",lty=2)
 	trendline(x1,y1,model="exp3P",plot=FALSE,ePos="none",linecolor="black",lty=3)
+
 	legend("bottomright",c("line2P","log2P","exp3P"), lty=c(1,2,3),col=c("red","blue","black"))
 
 <img src="docs/images/Multilines.png" width="490"/>
