@@ -76,7 +76,7 @@ version 1.0.1 of "basicTrendline" package, figure for exp3P:
 
 
 	library(basicTrendline)
-	 # change to use model "log2P"
+
 	trendline(x,y, model="log2P", summary=TRUE, eDigit=3, ePos="bottom",linecolor="black") 
 
 <img src="docs/images/log2P.png" width="490"/>
