@@ -33,7 +33,7 @@ Then upload your dataset including x and y data, for example
     x<-c(1,30,90,180,360)
     y<-c(4,8,10,11,11)
 
- **[case 1]** and run
+ **[case 1：] plot and add trendline as default:** 
 
 	library(basicTrendline)
 
@@ -48,19 +48,19 @@ version 1.0.1 of "basicTrendline" package, figure for exp3P:
 
  <img src="docs/images/exp.png" width="490"/>
 
-**[case 2]** Or, plot and add trendline one by one as follows: 
+**[case 2:] plot and add trendline separately: ** 
 
 
 	plot(x,y,yaxt="n",xlab = "your own xaxis name (mg)", ylab = "ylab (‰)")
 	axis(2,las=2)  # Change the y-axis text direction
 
 	library(basicTrendline)
-
+	#set plot=FALSE in the following codes
 	trendline(x,y, plot=FALSE, model="power3P", summary=TRUE, eDigit=3, ePos="bottom",linecolor="black") 
 
 <img src="docs/images/power.png" width="490"/>
 	
-**[case 3]** You can chanage other models, using the same function "trendline()"
+**[case 3:] chanage other models, using the same function "trendline()"** 
 
 “model” is one of c('lin2P','line3P','log2P','exp3P','power3P')
 	
@@ -74,7 +74,7 @@ version 1.0.1 of "basicTrendline" package, figure for exp3P:
 
 - "power3P"   # y=a*x^b+c)
 
-**[case 4]** Moreover, we can draw **different regression lines in one plot!!!**
+**[case 4:] draw different regression lines for the same dataset:**
 
 
 	plot(x1,y1,main="Different regression lines in one plot")
@@ -88,9 +88,9 @@ version 1.0.1 of "basicTrendline" package, figure for exp3P:
 <img src="docs/images/Multilines.png" width="490"/>
 
 
-**[case 5]** Finally, we can also draw **Same regression lines with different dataset!!!**
+**[case 5:] draw trendlines by the same model (e.g. "exp3P") with different datasets:**
 
-import some dataset:
+import some datasets:
 
 	x1<- c(1,30,90,180,360)
 	x2<- c(1,45,90,180,360)
@@ -100,7 +100,7 @@ import some dataset:
 	y2<- c(8,11,13,15,17) 
 	y3<-c(9,13,16,16,16)   
 
-Plot and add regression lines:
+Plot (or points) and add trendlines:
 
 	plot(x1,y1,,pch=1, xlim = c(0,400),ylim = c(6,22),main="Same regression lines with different datasets",xlab = "Time (days)", ylab = "your ylab (‰)")
 
