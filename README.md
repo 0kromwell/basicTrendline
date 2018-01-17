@@ -36,9 +36,13 @@ Then upload your dataset including x and y data, for example
 	trendline(x,y,model="exp3P", summary=TRUE, eDigit=3, ePos="bottom",linecolor="red")  
 
 
-version 1.0.2 figure for exp3P: <img src="docs/images/exp3P2.png" width="490"/>
+version 1.0.2 of "basicTrendline" package, figure for exp3P:
+
+ <img src="docs/images/exp3P2.png" width="490"/>
 	
-version 1.0.1 figure for exp3P: <img src="docs/images/exp.png" width="490"/>
+version 1.0.1 of "basicTrendline" package, figure for exp3P:
+
+ <img src="docs/images/exp.png" width="490"/>
 
 **[case 2]** Or, plot and add trendline one by one as follows: 
 
