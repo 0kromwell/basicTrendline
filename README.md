@@ -7,12 +7,12 @@
 
 ## Installing "basicTrendline" package in R
 
-1\. version 1.0.1 from R (Open R software and run:)
+1\. **version 1.0.1** from R (Open R software and run:)
 
 	install.packages("basicTrendline")
 	library(basicTrendline)
 
-2\. version 1.0.2 from Github (change the expression of formula of "exp3P" from y=a*exp(b*x)+c to y=a*e<sup>b*x</sup>+c )
+2\. **version 1.0.2** (Recommend !!!) from Github (change the expression of formula of "exp3P" from y=a*exp(b*x)+c to y=a*e<sup>b*x</sup>+c )
 
 You can install directly **from GitHub** if you have the devtools package installed:
 
@@ -35,7 +35,10 @@ Then upload your dataset including x and y data, for example
 
 	trendline(x,y,model="exp3P", summary=TRUE, eDigit=3, ePos="bottom",linecolor="red")  
 
-<img src="docs/images/exp.png" width="490"/>
+
+version 1.0.2 figure for exp3P: <img src="docs/images/exp3P2.png" width="490"/>
+	
+version 1.0.1 figure for exp3P: <img src="docs/images/exp.png" width="490"/>
 
 **[case 2]** Or, plot and add trendline one by one as follows: 
 
