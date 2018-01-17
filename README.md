@@ -7,12 +7,12 @@
 
 ## Installing "basicTrendline" package in R
 
-1\. from R (Open R software and run:)
+1\. version 1.0.1 from R (Open R software and run:)
 
 	install.packages("basicTrendline")
 	library(basicTrendline)
 
-2\. from Github 
+2\. version 1.0.2 from Github (change the expression of formula of "exp3P" from y=a*exp(b*x)+c to y=a*e<sup>b*x</sup>+c )
 
 You can install directly **from GitHub** if you have the devtools package installed:
 

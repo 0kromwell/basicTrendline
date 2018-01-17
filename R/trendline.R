@@ -347,15 +347,15 @@ if (model== c("log2P"))
     if (b>=0)
     {
       if (c>=0){
-      param[1] <- substitute(expression(italic("y") == aa~"exp"(bb~italic("x"))~+cc))[2]
+      param[1] <- substitute(expression(italic("y") == aa~"e"^{bb~italic("x")}~+cc))[2]
       }else{
-      param[1] <- substitute(expression(italic("y") == aa~"exp"(bb~italic("x"))~-cc))[2]
+      param[1] <- substitute(expression(italic("y") == aa~"e"^{bb~italic("x")}~-cc))[2]
       }
     }else{
       if (c>=0){
-        param[1] <- substitute(expression(italic("y") == aa~"exp"(bb~italic("x"))~+cc))[2]
+        param[1] <- substitute(expression(italic("y") == aa~"e"^{bb~italic("x")}~+cc))[2]
       }else{
-        param[1] <- substitute(expression(italic("y") == aa~"exp"(bb~italic("x"))~-cc))[2]
+        param[1] <- substitute(expression(italic("y") == aa~"e"^{bb~italic("x")}~-cc))[2]
       }
     }
 
@@ -363,15 +363,15 @@ if (model== c("log2P"))
    if (b>=0)
    {
      if (c>=0){
-       param[1] <- substitute(expression(italic("y") == -aa~"exp"(bb~italic("x"))~+cc))[2]
+       param[1] <- substitute(expression(italic("y") == -aa~"e"^{bb~italic("x")}~+cc))[2]
      }else{
-       param[1] <- substitute(expression(italic("y") == -aa~"exp"(bb~italic("x"))~-cc))[2]
+       param[1] <- substitute(expression(italic("y") == -aa~"e"^{bb~italic("x")}~-cc))[2]
      }
    }else{
      if (c>=0){
-       param[1] <- substitute(expression(italic("y") == -aa~"exp"(bb~italic("x"))~+cc))[2]
+       param[1] <- substitute(expression(italic("y") == -aa~"e"^{bb~italic("x")}~+cc))[2]
      }else{
-       param[1] <- substitute(expression(italic("y") == -aa~"exp"(bb~italic("x"))~-cc))[2]
+       param[1] <- substitute(expression(italic("y") == -aa~"e"^{bb~italic("x")}~-cc))[2]
      }
    }
 }
