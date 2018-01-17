@@ -62,7 +62,14 @@ version 1.0.1 of "basicTrendline" package, figure for exp3P:
 	
 **[case 3:] chanage other models, using the same function "trendline()"** 
 
-“model” is one of c('lin2P','line3P','log2P','exp3P','power3P')
+	library(basicTrendline)
+
+	# change model to "log2P"
+	trendline(x,y, model="log2P", summary=TRUE, eDigit=3, ePos="bottom",linecolor="black") 
+
+<img src="docs/images/log2P.png" width="490"/>
+
+“model” can be one of c('lin2P','line3P','log2P','exp3P','power3P')
 	
 - "line2P"    # y=a\*x+b
 
@@ -75,11 +82,6 @@ version 1.0.1 of "basicTrendline" package, figure for exp3P:
 - "power3P"   # y=a*x^b+c)
 
 
-	library(basicTrendline)
-
-	trendline(x,y, model="log2P", summary=TRUE, eDigit=3, ePos="bottom",linecolor="black") 
-
-<img src="docs/images/log2P.png" width="490"/>
 
 **[case 4:] draw different regression lines for the same dataset:**
 
