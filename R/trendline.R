@@ -3,7 +3,7 @@ trendline <- function(x,y,model="line2P", plot=TRUE, linecolor="red", lty=1, lwd
 {
   model=model
   if (plot==TRUE){
-  plot(x, y)
+  plot(x, y,xlab = deparse(substitute(x)), ylab = deparse(substitute(y)))
   }else{}
 
   OK <- complete.cases(x, y)
