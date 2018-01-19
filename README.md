@@ -138,50 +138,6 @@ Plot (or points) and add trendlines:
 <img src="docs/images/case5.png" width="490"/>
 
 
-## Highlights
-
-<font color=red>The "basicTrendline" package in R software could output **a better regression result (higher R<sup>2</sup> and lower p-value)** for 'power3P' model（y = ax^b +c） **than those in OriginPro** software.</font> Please see the example below:
-
->formula as y=a*x^b +c
-
-x<- c(1,30,60,90,180,360)
-
-y<- c(2,14,16,18,19,20)  # increase convex-function
-
->in OriginPro software:
-
-c=-7344.578
-
-a=7347.183
-
-b=43224.4
-
-<font color=red>**adjR<sup>2</sup>= 0.97129       # lower adjR<sup>2</sup> value**</font>
-
-p-value of model=2.24891e-4
-
->in the 'basicTrendline' R package:
-
-c=34.671
-
-a=-32.703
-
-b=-0.13999
-
-<font color=red>**adjR<sup>2</sup>= 0.99346 >  0.97129   # higher (or better ) adjR<sup>2</sup> value**</font>
-
-p-value of model= 2.44924-5 < 2.24891e-4
-
-## Graphics
-
-<img src="docs/images/line2P.png" width="490"/>
-<img src="docs/images/line3P.png" width="490"/>
-<img src="docs/images/log.png" width="490"/>
-<img src="docs/images/log0.5.png" width="490"/>
-<img src="docs/images/exp.png" width="490"/>
-<img src="docs/images/power.png" width="490"/>
-
-
 To see examples on how to use "basicTrendline" in R software, you can run the following R code if you have the "basicTrendline" package installed:
 
     library(basicTrendline)
