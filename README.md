@@ -14,7 +14,7 @@
 	install.packages("basicTrendline")
 	library(basicTrendline)
 
-2\. **version 1.0.2** (Recommend !!!) from Github (change the expression of formula of "exp3P" from y=a\*exp(b\*x)+c to y=a\*e<sup>b\*x</sup>+c )
+2\. **version 1.0.2** from Github
 
 You can install directly **from GitHub** if you have the devtools package installed:
 
