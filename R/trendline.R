@@ -49,13 +49,13 @@ if (model== c("line2P"))
 if (a>0)
 {
   if (b>=0)
-  {param[1] <- substitute(expression(italic("y") == aa~italic("x") + bb))[2]
-  }else{param[1] <- substitute(expression(italic("y") == aa~italic("x") - bb))[2]
+  {param[1] <- substitute(expression(hat(italic("y")) == aa~italic("x") + bb))[2]
+  }else{param[1] <- substitute(expression(hat(italic("y")) == aa~italic("x") - bb))[2]
   }
 }else{
   if (b>=0)
-  {param[1] <- substitute(expression(italic("y") == -aa~italic("x") + bb))[2]
-  }else{param[1] <- substitute(expression(italic("y") == -aa~italic("x") - bb))[2]
+  {param[1] <- substitute(expression(hat(italic("y")) == -aa~italic("x") + bb))[2]
+  }else{param[1] <- substitute(expression(hat(italic("y")) == -aa~italic("x") - bb))[2]
   }
 }
 
@@ -121,13 +121,13 @@ if (a>0)
     if (b>=0)
     {
       if(c>=0)
-      {param[1] <- substitute(expression(italic("y") == aa~italic("x")^2 + bb~italic("x") +cc))[2]
-      }else{param[1] <- substitute(expression(italic("y") == aa~italic("x")^2 + bb~italic("x") -cc))[2]
+      {param[1] <- substitute(expression(hat(italic("y")) == aa~italic("x")^2 + bb~italic("x") +cc))[2]
+      }else{param[1] <- substitute(expression(hat(italic("y")) == aa~italic("x")^2 + bb~italic("x") -cc))[2]
       }
     }else{
       if(c>=0)
-      {param[1] <- substitute(expression(italic("y") == aa~italic("x")^2 - bb~italic("x") +cc))[2]
-      }else{param[1] <- substitute(expression(italic("y") == aa~italic("x")^2 - bb~italic("x") -cc))[2]
+      {param[1] <- substitute(expression(hat(italic("y")) == aa~italic("x")^2 - bb~italic("x") +cc))[2]
+      }else{param[1] <- substitute(expression(hat(italic("y")) == aa~italic("x")^2 - bb~italic("x") -cc))[2]
       }
     }
 
@@ -135,13 +135,13 @@ if (a>0)
     if (b>=0)
     {
       if(c>=0)
-      {param[1] <- substitute(expression(italic("y") == -aa~italic("x")^2 + bb~italic("x") +cc))[2]
-      }else{param[1] <- substitute(expression(italic("y") == -aa~italic("x")^2 + bb~italic("x") -cc))[2]
+      {param[1] <- substitute(expression(hat(italic("y")) == -aa~italic("x")^2 + bb~italic("x") +cc))[2]
+      }else{param[1] <- substitute(expression(hat(italic("y")) == -aa~italic("x")^2 + bb~italic("x") -cc))[2]
       }
     }else{
       if(c>=0)
-      {param[1] <- substitute(expression(italic("y") == -aa~italic("x")^2 - bb~italic("x") +cc))[2]
-      }else{param[1] <- substitute(expression(italic("y") == -aa~italic("x")^2 - bb~italic("x") -cc))[2]
+      {param[1] <- substitute(expression(hat(italic("y")) == -aa~italic("x")^2 - bb~italic("x") +cc))[2]
+      }else{param[1] <- substitute(expression(hat(italic("y")) == -aa~italic("x")^2 - bb~italic("x") -cc))[2]
       }
     }
 
@@ -210,17 +210,17 @@ if (model== c("log2P"))
   {
     if (b>=0)
     {
-      param[1] <- substitute(expression(italic("y") == aa~"ln(x)" + bb))[2]
+      param[1] <- substitute(expression(hat(italic("y")) == aa~"ln(x)" + bb))[2]
     }else{
-      param[1] <- substitute(expression(italic("y") == aa~"ln(x)" - bb))[2]
+      param[1] <- substitute(expression(hat(italic("y")) == aa~"ln(x)" - bb))[2]
     }
 
   }else{
     if (b>=0)
     {
-      param[1] <- substitute(expression(italic("y") == -aa~"ln(x)" + bb))[2]
+      param[1] <- substitute(expression(hat(italic("y")) == -aa~"ln(x)" + bb))[2]
     }else{
-      param[1] <- substitute(expression(italic("y") == -aa~"ln(x)" - bb))[2]
+      param[1] <- substitute(expression(hat(italic("y")) == -aa~"ln(x)" - bb))[2]
     }
   }
 
@@ -347,15 +347,15 @@ if (model== c("log2P"))
     if (b>=0)
     {
       if (c>=0){
-      param[1] <- substitute(expression(italic("y") == aa~"e"^{bb~italic("x")}~+cc))[2]
+      param[1] <- substitute(expression(hat(italic("y")) == aa~"e"^{bb~italic("x")}~+cc))[2]
       }else{
-      param[1] <- substitute(expression(italic("y") == aa~"e"^{bb~italic("x")}~-cc))[2]
+      param[1] <- substitute(expression(hat(italic("y")) == aa~"e"^{bb~italic("x")}~-cc))[2]
       }
     }else{
       if (c>=0){
-        param[1] <- substitute(expression(italic("y") == aa~"e"^{bb~italic("x")}~+cc))[2]
+        param[1] <- substitute(expression(hat(italic("y")) == aa~"e"^{bb~italic("x")}~+cc))[2]
       }else{
-        param[1] <- substitute(expression(italic("y") == aa~"e"^{bb~italic("x")}~-cc))[2]
+        param[1] <- substitute(expression(hat(italic("y")) == aa~"e"^{bb~italic("x")}~-cc))[2]
       }
     }
 
@@ -363,15 +363,15 @@ if (model== c("log2P"))
    if (b>=0)
    {
      if (c>=0){
-       param[1] <- substitute(expression(italic("y") == -aa~"e"^{bb~italic("x")}~+cc))[2]
+       param[1] <- substitute(expression(hat(italic("y")) == -aa~"e"^{bb~italic("x")}~+cc))[2]
      }else{
-       param[1] <- substitute(expression(italic("y") == -aa~"e"^{bb~italic("x")}~-cc))[2]
+       param[1] <- substitute(expression(hat(italic("y")) == -aa~"e"^{bb~italic("x")}~-cc))[2]
      }
    }else{
      if (c>=0){
-       param[1] <- substitute(expression(italic("y") == -aa~"e"^{bb~italic("x")}~+cc))[2]
+       param[1] <- substitute(expression(hat(italic("y")) == -aa~"e"^{bb~italic("x")}~+cc))[2]
      }else{
-       param[1] <- substitute(expression(italic("y") == -aa~"e"^{bb~italic("x")}~-cc))[2]
+       param[1] <- substitute(expression(hat(italic("y")) == -aa~"e"^{bb~italic("x")}~-cc))[2]
      }
    }
 }
@@ -492,16 +492,16 @@ if (model== c("power3P"))
   if (a>=0)
    {
     if (c>=0){
-        param[1] <- substitute(expression(italic("y") == aa~italic("x")^b ~ + cc))[2]
+        param[1] <- substitute(expression(hat(italic("y")) == aa~italic("x")^b ~ + cc))[2]
         }else{
-        param[1] <- substitute(expression(italic("y") == aa~italic("x")^b ~ - cc))[2]
+        param[1] <- substitute(expression(hat(italic("y")) == aa~italic("x")^b ~ - cc))[2]
         }
 
   }else{
     if (c>=0){
-      param[1] <- substitute(expression(italic("y") == -aa~italic("x")^b ~ + cc))[2]
+      param[1] <- substitute(expression(hat(italic("y")) == -aa~italic("x")^b ~ + cc))[2]
     }else{
-      param[1] <- substitute(expression(italic("y") == -aa~italic("x")^b ~ - cc))[2]
+      param[1] <- substitute(expression(hat(italic("y")) == -aa~italic("x")^b ~ - cc))[2]
     }
   }
 
