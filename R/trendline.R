@@ -65,7 +65,7 @@ if (a>0)
   b=as.numeric(b)
   param.out<- c(list("a"=a,"b"=b)) # for return values
 
-  xx<-seq(min(x),max(x),len=10000)
+  xx<-seq(min(x),max(x),len=100)
 
   yfit<-predict(fit,data.frame(x=xx))   # definite x using xx
 
@@ -147,14 +147,14 @@ if (a>0)
 
   }
 
-    param[2] <- substitute(expression(italic(R)^2 == r2*","~~italic(p) == pval))[2]
+    param[2] <- substitute(expression(italic(R)^2 == r2*","~~italic(p) == pval*"            "))[2]
 
     a=as.numeric(a)
     b=as.numeric(b)
     c=as.numeric(c)
     param.out<- c(list("a"=a,"b"=b,"c"=c))
 
-    xx<-seq(min(x),max(x),len=10000)
+    xx<-seq(min(x),max(x),len=100)
     xx.square=xx^2
 
     yfit<-predict(fit,data.frame(x=xx,x.square=xx.square))   # definite x using xx
@@ -230,7 +230,7 @@ if (model== c("log2P"))
     b=as.numeric(b)
     param.out<- c(list("a"=a,"b"=b))
 
-    xx<-seq(min(x),max(x),len=10000)
+    xx<-seq(min(x),max(x),len=100)
 
     yfit<-predict(fit,data.frame(x=xx))   # definite x using xx
 
@@ -382,7 +382,7 @@ if (model== c("log2P"))
     c=as.numeric(c)
     param.out<- c(list("a"=a,"b"=b,"c"=c))
 
-    xx<-seq(min(x),max(x),len=10000)
+    xx<-seq(min(x),max(x),len=100)
 
     yfit<-predict(fit,data.frame(x=xx))   # definite x using xx
 
@@ -512,7 +512,7 @@ if (model== c("power3P"))
       c=as.numeric(c)
       param.out<- c(list("a"=a,"b"=b,"c"=c))
 
-      xx<-seq(min(x),max(x),len=10000)
+      xx<-seq(min(x),max(x),len=100)
 
       yfit<-predict(fit,data.frame(x=xx))   # definite x using xx
 
@@ -534,7 +534,7 @@ if (model== c("power3P"))
 }
 
   if (ePos==c("none")){}else{
-  legend(ePos, inset=-0.01,legend = param, cex = eSize,bty = 'n')
+  legend(ePos, inset=0,legend = param, cex = eSize,bty = 'n')
   }
 
   r2=as.numeric(r2)
