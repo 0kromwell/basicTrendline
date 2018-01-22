@@ -5,7 +5,7 @@
 [![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/basicTrendline)](https://github.com/metacran/cranlogs.app)
 [![HitCount](http://hits.dwyl.io/PhDMeiwp/basicTrendline.svg)](http://hits.dwyl.io/PhDMeiwp/basicTrendline)
 
-## Installing "basicTrendline" package in R
+## Installation
 
 1\. **version 1.0.1** from R (Open R software and run:)
 
@@ -26,7 +26,7 @@ You can install directly **from GitHub** if you have the devtools package instal
 	library(basicTrendline)
 
 
-## Using "basicTrendline" package
+## Examples
 	
 Then upload your dataset including x and y data, for example
 
@@ -40,13 +40,13 @@ Then upload your dataset including x and y data, for example
 	trendline(x,y,model="exp3P", summary=TRUE, eDigit=3, ePos="bottom",linecolor="red")  
 
 
-version 1.0.2 of "basicTrendline" package, figure for exp3P:
+version 1.0.2:
 
- <img src="docs/images/exp3P2.png" width="490"/>
+ <img src="docs/images/case1.1.png" width="490"/>
 	
-version 1.0.1 of "basicTrendline" package, figure for exp3P:
+version 1.0.1:
 
- <img src="docs/images/exp.png" width="490"/>
+ <img src="docs/images/case1.2.png" width="490"/>
 
 **[case 2:] plot and add trendline separately:** 
 
