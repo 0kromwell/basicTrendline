@@ -58,7 +58,7 @@ version 1.0.1 of "basicTrendline" package, figure for exp3P:
 	#set plot=FALSE in the following codes
 	trendline(x,y, plot=FALSE, model="power3P", summary=TRUE, eDigit=3, ePos="bottom",linecolor="black") 
 
-<img src="docs/images/power.png" width="490"/>
+<img src="docs/images/case2.png" width="490"/>
 	
 **[case 3:] chanage other models, using the same function "trendline()"** 
 
@@ -67,7 +67,7 @@ version 1.0.1 of "basicTrendline" package, figure for exp3P:
 	# change model to "log2P"
 	trendline(x,y, model="log2P", summary=TRUE, eDigit=3, ePos="bottom",linecolor="black") 
 
-<img src="docs/images/log2P.png" width="490"/>
+<img src="docs/images/case3.png" width="490"/>
 
 “model” can be one of c('lin2P','line3P','log2P','exp3P','power3P')
 	
@@ -98,7 +98,7 @@ version 1.0.1 of "basicTrendline" package, figure for exp3P:
 
 	legend("bottomright",c("line2P","log2P","exp3P"), lty=c(1,2,3),col=c("red","blue","black"))
 
-<img src="docs/images/Multilines.png" width="490"/>
+<img src="docs/images/case4.png" width="490"/>
 
 
 **[case 5:] draw trendlines by the same model (e.g. "exp3P") with different datasets:**
@@ -115,10 +115,10 @@ import some datasets:
 
 Plot (or points) and add trendlines:
 
-	plot(x1,y1,,pch=1, xlim = c(0,400),ylim = c(6,22),main="Same regression lines with different datasets",xlab = "Time (days)", ylab = "your ylab (‰)")
+	plot(x1,y1,,pch=1,col="red",xlim = c(0,400),ylim = c(6,22),main="Same regression lines with different datasets",xlab = "Time (days)", ylab = "your ylab (‰)")
 
-	points(x2,y2,pch=2)  # different type for points
-	points(x3,y3,pch=3)
+	points(x2,y2,pch=2,col="blue")  # pch values refer to different type for points
+	points(x3,y3,pch=3,col="green")
 
 	library(basicTrendline)
 
