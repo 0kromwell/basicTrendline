@@ -5,7 +5,7 @@
 [![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/basicTrendline)](https://github.com/metacran/cranlogs.app)
 [![HitCount](http://hits.dwyl.io/PhDMeiwp/basicTrendline.svg)](http://hits.dwyl.io/PhDMeiwp/basicTrendline)
 
-## Installation
+## Installation (1.0.2 or 1.0.1)
 
 1\. **version 1.0.1** from R (Open R software and run:)
 
