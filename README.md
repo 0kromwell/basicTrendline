@@ -5,6 +5,10 @@
 [![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/basicTrendline)](https://github.com/metacran/cranlogs.app)
 [![HitCount](http://hits.dwyl.io/PhDMeiwp/basicTrendline.svg)](http://hits.dwyl.io/PhDMeiwp/basicTrendline)
 
+## @Details
+
+The linear models (line2P, line3P, log2P) in this package are estimated by **lm()** function, while the nonlinear models (exp3P, power3P) are estimated by **nls()** function (i.e., **least-squares method**).
+
 ## Installation (1.0.2 or 1.0.1)
 
 1\. **version 1.0.1** from R (Open R software and run:)
