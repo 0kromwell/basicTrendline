@@ -42,6 +42,9 @@ by using different models built in the 'trendline()' function. The function incl
 "line2P" (formula as: y=a*x+b), "line3P" (y=a*x^2+b*x+c), "log2P" (y=a*ln(x)+b), "exp3P" (y=a*exp(b*x)+c), and "power3P" (y=a*x^b+c).
 Besides, the summarized results of each fitted model are also output by default.
 }
+\details{
+The linear models (line2P, line3P, log2P) in this package are estimated by \code{\link[stats]{lm}} function, while the nonlinear models (exp3P, power3P) are estimated by \code{\link[stats]{nls}} function (i.e., least-squares method).
+}
 \examples{
 library(basicTrendline)
 x1<-1:5
