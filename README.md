@@ -1,17 +1,16 @@
 # basicTrendline: an R package for adding trendline of basic regression models to plot
 
+ <img src="docs/images/basicTrendline.hexSticker.png"  height="200" align="right">
+
 [![cran version](http://www.r-pkg.org/badges/version/basicTrendline)](http://cran.rstudio.com/web/packages/basicTrendline) 
 [![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/grand-total/basicTrendline)](https://github.com/metacran/cranlogs.app)
 [![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/basicTrendline)](https://github.com/metacran/cranlogs.app)
 [![HitCount](http://hits.dwyl.io/PhDMeiwp/basicTrendline.svg)](http://hits.dwyl.io/PhDMeiwp/basicTrendline)
 
-## @Details
 
-The linear models (line2P, line3P, log2P) in this package are estimated by **lm()** function, while the nonlinear models (exp3P, power3P) are estimated by **nls()** function (i.e., **least-squares method**).
+## Installation (1.0.2)
 
-## Installation (1.0.2 or 1.0.1)
-
-1\. **version 1.0.2** from Github
+**version 1.0.2** from Github （Recommendation）
 
     ### version 1.0.2
 	
@@ -20,16 +19,78 @@ The linear models (line2P, line3P, log2P) in this package are estimated by **lm(
 	install_github("PhDMeiwp/basicTrendline@master", force = TRUE)
 	library(basicTrendline)
 
-2\. **version 1.0.1** from R
-
-	### version 1.0.1
-	
-	install.packages("basicTrendline")
-	library(basicTrendline)
 
 
+---
 
-## Examples
+## Description
+
+Plot and show both regression line and equation as simple as possible, by using different models built in the 'trendline()' function. The function includes the following models in the latest version: 
+
+"line2P" (formula as: y=a\*x+b), "line3P" (y=a\*x<sup>2</sup>+b\*x+c), "log2P" (y=a\*ln(x)+b), "exp3P" (y=a\*e<sup>b\*x</sup>+c), and "power3P" (y=a\*x<sup>b</sup>+c). 
+
+Besides, the summarized results of each fitted model are also output by default.
+
+## Usage
+
+	trendline(x, y, model = "line2P", linecolor = "red", lty = 1, lwd = 1,
+  				summary = TRUE, ePos = "topleft", eDigit = 5, eSize = 1,
+  				plot = TRUE, ...)
+
+## Arguments
+
+<br>**x, y**<br>	
+the x and y arguments provide the x and y coordinates for the plot. Any reasonable way of defining the coordinates is acceptable.
+
+<br>**model**<br>	
+select which model to fit. Default is "line2P". The "model" should be one of c("line2P", "line3P", "log2P", "exp3P", "power3P"), their formulas are as follows:
+<br>"line2P": y=a\*x+b 
+<br>"line3P": y=a\*x<sup>2</sup>+b\*x+c 
+<br>"log2P": y=a\*ln(x)+b 
+<br>"exp3P": y=a\*e<sup>b\*x</sup>+c 
+<br>"power3P": y=a\*x<sup>b</sup>+c
+
+<br>**linecolor**<br>	
+color of regression line.
+
+<br>**lty**<br>
+line type. lty can be specified using either text c("blank","solid","dashed","dotted","dotdash","longdash","twodash") or number c(0, 1, 2, 3, 4, 5, 6). Note that lty = "solid" is identical to lty=1.
+
+<br>**lwd**	<br>
+line width. Default is 1.
+
+<br>**summary**	<br>
+summarizing the model fits. Default is TRUE.
+
+<br>**ePos**<br>	
+equation position, such as one of c("none","bottomright","bottom","bottomleft","left","topleft","top","topright","right","center").
+
+<br>**eDigit**	<br>
+the numbers of digits for equation parameters. Default is 5.
+
+<br>**eSize**	<br>
+font size in percentage of equation. Default is 1.
+
+<br>**plot**<br>	
+draw a scatter plot automatically, the vlaue is one of c("TRUE", "FALSE").
+
+**...**<br>
+additional parameters to plot,such as type, main, sub, xlab, ylab, col.
+
+## Details
+
+The linear models (line2P, line3P, log2P) in this package are estimated by **lm** function, while the **nonlinear models (exp3P, power3P)** are estimated by **nls** function (i.e., **least-squares method**).
+
+## Value
+
+R<sup>2</sup>, indicates the R-Squared value of each regression model.
+
+p, indicates the p-value of each regression model.
+
+AIC or BIC, indicate the Akaike's Information Criterion or Bayesian Information Criterion for fitted model. Click AIC for details. The smaller the AIC or BIC, the better the model.
+
+
+# Examples
 	
 Then upload your dataset including x and y data, for example
 
@@ -42,14 +103,8 @@ Then upload your dataset including x and y data, for example
 
 	trendline(x,y,model="exp3P", summary=TRUE, eDigit=3, ePos="bottom",linecolor="red")  
 
-
-version 1.0.2:
-
  <img src="docs/images/case1.1.png" width="490"/>
-	
-version 1.0.1:
 
- <img src="docs/images/case1.2.png" width="490"/>
 
 **[case 2] plot and add trendline separately:** 
 
