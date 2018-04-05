@@ -7,7 +7,6 @@
 #'
 #' @param x,y  the x and y arguments provide the x and y coordinates for the plot. Any reasonable way of defining the coordinates is acceptable.
 #' @param model select which model to fit. Default is "line2P". The "model" should be one of c("line2P", "line3P", "log2P", "exp3P", "power3P"), their formulas are as follows:\cr "line2P": y=a*x+b \cr "line3P": y=a*x^2+b*x+c \cr "log2P": y=a*ln(x)+b \cr "exp3P": y=a*exp(b*x)+c \cr "power3P": y=a*x^b+c
-#' @param plot draw a scatter plot automatically, the vlaue is one of c("TRUE", "FALSE").
 #' @param linecolor color of regression line.
 #' @param lty line type. lty can be specified using either text c("blank","solid","dashed","dotted","dotdash","longdash","twodash") or number c(0, 1, 2, 3, 4, 5, 6). Note that lty = "solid" is identical to lty=1.
 #' @param lwd line width. Default is 1.
@@ -15,6 +14,9 @@
 #' @param ePos equation position, such as one of c("none","bottomright","bottom","bottomleft","left","topleft","top","topright","right","center").
 #' @param eDigit the numbers of digits for equation parameters. Default is 5.
 #' @param eSize  font size in percentage of equation. Default is 1.
+#' @param plot draw a scatter plot automatically, the vlaue is one of c("TRUE", "FALSE").
+#' @param ... additional parameters to \code{\link[graphics]{plot}},such as type, main, sub, xlab, ylab, col.
+
 #' @import graphics
 #' @import stats
 #' @export
@@ -54,11 +56,11 @@
 #' @author Weiping Mei, Guangchuang Yu
 #' @seealso  \code{\link{trendline}}, \code{\link{SSexp3P}}, \code{\link{SSpower3P}}, \code{\link[stats]{nls}}, \code{\link[stats]{selfStart}}
 
-trendline <- function(x,y,model="line2P", plot=TRUE, linecolor="red", lty=1, lwd=1, summary=TRUE, ePos="topleft", eDigit=5, eSize=1)
+trendline <- function(x,y,model="line2P", linecolor="red", lty=1, lwd=1, summary=TRUE, ePos="topleft", eDigit=5, eSize=1, plot=TRUE, ...)
 {
   model=model
   if (plot==TRUE){
-  plot(x, y,xlab = deparse(substitute(x)), ylab = deparse(substitute(y)))
+  plot(x, y,...)
   }else{}
 
   OK <- complete.cases(x, y)
@@ -101,18 +103,19 @@ if (model== c("line2P"))
 
   if (aa==1){aa=c("")}
 
-if (a>0)
-{
-  if (b>=0)
-  {param[1] <- substitute(expression(hat(italic("y")) == aa~italic("x") + bb))[2]
-  }else{param[1] <- substitute(expression(hat(italic("y")) == aa~italic("x") - bb))[2]
+
+  if (a>0)
+  {
+    if (b>=0)
+    {param[1] <- substitute(expression(italic("y") == aa~italic("x") + bb))[2]
+    }else{param[1] <- substitute(expression(italic("y") == aa~italic("x") - bb))[2]
+    }
+  }else{
+    if (b>=0)
+    {param[1] <- substitute(expression(italic("y") == -aa~italic("x") + bb))[2]
+    }else{param[1] <- substitute(expression(italic("y") == -aa~italic("x") - bb))[2]
+    }
   }
-}else{
-  if (b>=0)
-  {param[1] <- substitute(expression(hat(italic("y")) == -aa~italic("x") + bb))[2]
-  }else{param[1] <- substitute(expression(hat(italic("y")) == -aa~italic("x") - bb))[2]
-  }
-}
 
   param[2] <- substitute(expression(italic(R)^2 == r2*","~~italic(p) == pval))[2]
 
@@ -176,13 +179,13 @@ if (a>0)
     if (b>=0)
     {
       if(c>=0)
-      {param[1] <- substitute(expression(hat(italic("y")) == aa~italic("x")^2 + bb~italic("x") +cc))[2]
-      }else{param[1] <- substitute(expression(hat(italic("y")) == aa~italic("x")^2 + bb~italic("x") -cc))[2]
+      {param[1] <- substitute(expression(italic("y") == aa~italic("x")^2 + bb~italic("x") +cc))[2]
+      }else{param[1] <- substitute(expression(italic("y") == aa~italic("x")^2 + bb~italic("x") -cc))[2]
       }
     }else{
       if(c>=0)
-      {param[1] <- substitute(expression(hat(italic("y")) == aa~italic("x")^2 - bb~italic("x") +cc))[2]
-      }else{param[1] <- substitute(expression(hat(italic("y")) == aa~italic("x")^2 - bb~italic("x") -cc))[2]
+      {param[1] <- substitute(expression(italic("y") == aa~italic("x")^2 - bb~italic("x") +cc))[2]
+      }else{param[1] <- substitute(expression(italic("y") == aa~italic("x")^2 - bb~italic("x") -cc))[2]
       }
     }
 
@@ -190,13 +193,13 @@ if (a>0)
     if (b>=0)
     {
       if(c>=0)
-      {param[1] <- substitute(expression(hat(italic("y")) == -aa~italic("x")^2 + bb~italic("x") +cc))[2]
-      }else{param[1] <- substitute(expression(hat(italic("y")) == -aa~italic("x")^2 + bb~italic("x") -cc))[2]
+      {param[1] <- substitute(expression(italic("y") == -aa~italic("x")^2 + bb~italic("x") +cc))[2]
+      }else{param[1] <- substitute(expression(italic("y") == -aa~italic("x")^2 + bb~italic("x") -cc))[2]
       }
     }else{
       if(c>=0)
-      {param[1] <- substitute(expression(hat(italic("y")) == -aa~italic("x")^2 - bb~italic("x") +cc))[2]
-      }else{param[1] <- substitute(expression(hat(italic("y")) == -aa~italic("x")^2 - bb~italic("x") -cc))[2]
+      {param[1] <- substitute(expression(italic("y") == -aa~italic("x")^2 - bb~italic("x") +cc))[2]
+      }else{param[1] <- substitute(expression(italic("y") == -aa~italic("x")^2 - bb~italic("x") -cc))[2]
       }
     }
 
@@ -265,17 +268,17 @@ if (model== c("log2P"))
   {
     if (b>=0)
     {
-      param[1] <- substitute(expression(hat(italic("y")) == aa~"ln(x)" + bb))[2]
+      param[1] <- substitute(expression(italic("y") == aa~"ln(x)" + bb))[2]
     }else{
-      param[1] <- substitute(expression(hat(italic("y")) == aa~"ln(x)" - bb))[2]
+      param[1] <- substitute(expression(italic("y") == aa~"ln(x)" - bb))[2]
     }
 
   }else{
     if (b>=0)
     {
-      param[1] <- substitute(expression(hat(italic("y")) == -aa~"ln(x)" + bb))[2]
+      param[1] <- substitute(expression(italic("y") == -aa~"ln(x)" + bb))[2]
     }else{
-      param[1] <- substitute(expression(hat(italic("y")) == -aa~"ln(x)" - bb))[2]
+      param[1] <- substitute(expression(italic("y") == -aa~"ln(x)" - bb))[2]
     }
   }
 
@@ -402,15 +405,15 @@ if (model== c("log2P"))
     if (b>=0)
     {
       if (c>=0){
-      param[1] <- substitute(expression(hat(italic("y")) == aa~"e"^{bb~italic("x")}~+cc))[2]
+      param[1] <- substitute(expression(italic("y") == aa~"e"^{bb~italic("x")}~+cc))[2]
       }else{
-      param[1] <- substitute(expression(hat(italic("y")) == aa~"e"^{bb~italic("x")}~-cc))[2]
+      param[1] <- substitute(expression(italic("y") == aa~"e"^{bb~italic("x")}~-cc))[2]
       }
     }else{
       if (c>=0){
-        param[1] <- substitute(expression(hat(italic("y")) == aa~"e"^{bb~italic("x")}~+cc))[2]
+        param[1] <- substitute(expression(italic("y") == aa~"e"^{bb~italic("x")}~+cc))[2]
       }else{
-        param[1] <- substitute(expression(hat(italic("y")) == aa~"e"^{bb~italic("x")}~-cc))[2]
+        param[1] <- substitute(expression(italic("y") == aa~"e"^{bb~italic("x")}~-cc))[2]
       }
     }
 
@@ -418,15 +421,15 @@ if (model== c("log2P"))
    if (b>=0)
    {
      if (c>=0){
-       param[1] <- substitute(expression(hat(italic("y")) == -aa~"e"^{bb~italic("x")}~+cc))[2]
+       param[1] <- substitute(expression(italic("y") == -aa~"e"^{bb~italic("x")}~+cc))[2]
      }else{
-       param[1] <- substitute(expression(hat(italic("y")) == -aa~"e"^{bb~italic("x")}~-cc))[2]
+       param[1] <- substitute(expression(italic("y") == -aa~"e"^{bb~italic("x")}~-cc))[2]
      }
    }else{
      if (c>=0){
-       param[1] <- substitute(expression(hat(italic("y")) == -aa~"e"^{bb~italic("x")}~+cc))[2]
+       param[1] <- substitute(expression(italic("y") == -aa~"e"^{bb~italic("x")}~+cc))[2]
      }else{
-       param[1] <- substitute(expression(hat(italic("y")) == -aa~"e"^{bb~italic("x")}~-cc))[2]
+       param[1] <- substitute(expression(italic("y") == -aa~"e"^{bb~italic("x")}~-cc))[2]
      }
    }
 }
@@ -547,19 +550,18 @@ if (model== c("power3P"))
   if (a>=0)
    {
     if (c>=0){
-        param[1] <- substitute(expression(hat(italic("y")) == aa~italic("x")^b ~ + cc))[2]
+        param[1] <- substitute(expression(italic("y") == aa~italic("x")^b ~ + cc))[2]
         }else{
-        param[1] <- substitute(expression(hat(italic("y")) == aa~italic("x")^b ~ - cc))[2]
+        param[1] <- substitute(expression(italic("y") == aa~italic("x")^b ~ - cc))[2]
         }
 
   }else{
     if (c>=0){
-      param[1] <- substitute(expression(hat(italic("y")) == -aa~italic("x")^b ~ + cc))[2]
+      param[1] <- substitute(expression(italic("y") == -aa~italic("x")^b ~ + cc))[2]
     }else{
-      param[1] <- substitute(expression(hat(italic("y")) == -aa~italic("x")^b ~ - cc))[2]
+      param[1] <- substitute(expression(italic("y") == -aa~italic("x")^b ~ - cc))[2]
     }
   }
-
       param[2] <- substitute(expression(italic(R)^2 == r2*","~~italic(p) == pval))[2]
 
       a=as.numeric(a)

@@ -11,16 +11,7 @@ The linear models (line2P, line3P, log2P) in this package are estimated by **lm(
 
 ## Installation (1.0.2 or 1.0.1)
 
-1\. **version 1.0.1** from R (Open R software and run:)
-
-	### version 1.0.1
-	
-	install.packages("basicTrendline")
-	library(basicTrendline)
-
-2\. **version 1.0.2** from Github
-
-You can install directly **from GitHub** if you have the devtools package installed:
+1\. **version 1.0.2** from Github
 
     ### version 1.0.2
 	
@@ -28,6 +19,14 @@ You can install directly **from GitHub** if you have the devtools package instal
 	library(devtools)   
 	install_github("PhDMeiwp/basicTrendline@master", force = TRUE)
 	library(basicTrendline)
+
+2\. **version 1.0.1** from R
+
+	### version 1.0.1
+	
+	install.packages("basicTrendline")
+	library(basicTrendline)
+
 
 
 ## Examples
@@ -37,7 +36,7 @@ Then upload your dataset including x and y data, for example
     x<-c(1,30,90,180,360)
     y<-c(4,8,10,11,11)
 
- **[case 1：] plot and add trendline as default:** 
+ **[case 1] plot and add trendline as default:** 
 
 	library(basicTrendline)
 
@@ -52,7 +51,7 @@ version 1.0.1:
 
  <img src="docs/images/case1.2.png" width="490"/>
 
-**[case 2:] plot and add trendline separately:** 
+**[case 2] plot and add trendline separately:** 
 
 
 	plot(x,y,yaxt="n",xlab = "your own xaxis name (mg)", ylab = "ylab (‰)")
@@ -64,7 +63,7 @@ version 1.0.1:
 
 <img src="docs/images/case2.png" width="490"/>
 	
-**[case 3:] chanage other models, using the same function "trendline()"** 
+**[case 3] chanage other models, using the same function "trendline()"** 
 
 	library(basicTrendline)
 
@@ -87,7 +86,7 @@ version 1.0.1:
 
 
 
-**[case 4:] draw different regression lines for the same dataset:**
+**[case 4] draw different regression lines for the same dataset:**
 
 	x1<-1:5
 	y1<-c(2,14,18,19,20)
@@ -105,7 +104,7 @@ version 1.0.1:
 <img src="docs/images/case4.png" width="490"/>
 
 
-**[case 5:] draw trendlines by the same model (e.g. "exp3P") with different datasets:**
+**[case 5] draw trendlines by the same model (e.g. "exp3P") with different datasets:**
 
 import some datasets:
 

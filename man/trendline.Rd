@@ -4,16 +4,14 @@
 \alias{trendline}
 \title{Add Trendline and Show Equation to Plot}
 \usage{
-trendline(x, y, model = "line2P", plot = TRUE, linecolor = "red",
-  lty = 1, lwd = 1, summary = TRUE, ePos = "topleft", eDigit = 5,
-  eSize = 1)
+trendline(x, y, model = "line2P", linecolor = "red", lty = 1, lwd = 1,
+  summary = TRUE, ePos = "topleft", eDigit = 5, eSize = 1,
+  plot = TRUE, ...)
 }
 \arguments{
 \item{x, y}{the x and y arguments provide the x and y coordinates for the plot. Any reasonable way of defining the coordinates is acceptable.}
 
 \item{model}{select which model to fit. Default is "line2P". The "model" should be one of c("line2P", "line3P", "log2P", "exp3P", "power3P"), their formulas are as follows:\cr "line2P": y=a*x+b \cr "line3P": y=a*x^2+b*x+c \cr "log2P": y=a*ln(x)+b \cr "exp3P": y=a*exp(b*x)+c \cr "power3P": y=a*x^b+c}
-
-\item{plot}{draw a scatter plot automatically, the vlaue is one of c("TRUE", "FALSE").}
 
 \item{linecolor}{color of regression line.}
 
@@ -28,6 +26,10 @@ trendline(x, y, model = "line2P", plot = TRUE, linecolor = "red",
 \item{eDigit}{the numbers of digits for equation parameters. Default is 5.}
 
 \item{eSize}{font size in percentage of equation. Default is 1.}
+
+\item{plot}{draw a scatter plot automatically, the vlaue is one of c("TRUE", "FALSE").}
+
+\item{...}{additional parameters to \code{\link[graphics]{plot}},such as type, main, sub, xlab, ylab, col.}
 }
 \value{
 R^2, indicates the R-Squared value of each regression model.
