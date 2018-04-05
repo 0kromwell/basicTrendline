@@ -1,6 +1,6 @@
 # basicTrendline: an R package for adding trendline of basic regression models to plot
 
- <img src="docs/images/basicTrendline.hexSticker.png"  height="200" align="right">
+ <img src="docs/images/basicTrendline.hex.png"  height="200" align="right">
 
 [![cran version](http://www.r-pkg.org/badges/version/basicTrendline)](http://cran.rstudio.com/web/packages/basicTrendline) 
 [![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/grand-total/basicTrendline)](https://github.com/metacran/cranlogs.app)
