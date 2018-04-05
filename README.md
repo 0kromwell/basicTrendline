@@ -21,8 +21,6 @@
 
 
 
----
-
 ## Description
 
 Plot and show both regression line and equation as simple as possible, by using different models built in the 'trendline()' function. The function includes the following models in the latest version: 
