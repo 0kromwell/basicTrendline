@@ -1,0 +1,7 @@
+Changes in version 1.0.2
+------------------------------------------------------------------------------
+
+* change the expression for `model` of `exp3P` using a supscript
+* add `Details` in `trendline()`
+* add `...` argument in `trendline()` as same as those in `plot()`
+
