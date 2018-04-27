@@ -8,16 +8,23 @@
 [![HitCount](http://hits.dwyl.io/PhDMeiwp/basicTrendline.svg)](http://hits.dwyl.io/PhDMeiwp/basicTrendline)
 
 
-## Installation (1.0.2)
+## Authors
 
-**version 1.0.2** from Github （Recommendation）
+Weiping MEI https://PhDMeiwp.github.io
 
-    ### version 1.0.2
+Graduate School of Fisheries and Environmental Sciences, Nagasaki University
+
+
+## Installation 
+
+Get the released version from CRAN:
+
+	install.packages("basicTrendline")
+
+Or the development version from github:
 	
 	install.packages("devtools")
-	library(devtools)   
-	install_github("PhDMeiwp/basicTrendline@master", force = TRUE)
-	library(basicTrendline)
+	devtools::install_github("PhDMeiwp/basicTrendline@master", force = TRUE)
 
 
 
