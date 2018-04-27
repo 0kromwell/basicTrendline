@@ -10,12 +10,15 @@
 
 ## Authors
 
+<img src="https://github.com/PhDMeiwp/PhDMeiwp.github.io/blob/hexo/Common_images/Mei_Logo.JPG" width="70"/>
+
 Weiping MEI https://PhDMeiwp.github.io
+
 
 Graduate School of Fisheries and Environmental Sciences, Nagasaki University
 
 
-## Installation 
+## Installation
 
 Get the released version from CRAN:
 
